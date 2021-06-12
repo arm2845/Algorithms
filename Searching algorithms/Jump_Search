@@ -1,0 +1,26 @@
+import math
+
+def jump_search(arr, target):
+	n = len(arr)
+	m = int(math.sqrt(n))
+	i = 0
+
+	while i < len(arr):
+
+		if arr[i + 1] == target:
+			return True
+		elif arr[i + 1] > target:
+			new_arr = arr[i: i + 1]
+			for j in new_arr:
+				if j == target:
+					return True
+				else:
+					return False
+		else:
+			i += m
+
+	return False
+
+arr = [4, 11, 17, 21, 25, 29, 32, 38]
+target = 24
+print(jump_search(arr, target))

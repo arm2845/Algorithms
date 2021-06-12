@@ -1,0 +1,18 @@
+def bubble_sort(arr):
+	size = len(arr)
+
+	for i in range(size - 1):
+		change = False
+		for j in range(size - 1 - i):
+			if arr[j] > arr[j + 1]:
+				arr[j], arr[j + 1] = arr[j + 1], arr[j]
+				change = True
+
+		if change == False:
+			break
+
+
+arr = [38, 9, 29, 7, 2, 15, 28]
+
+bubble_sort(arr)
+print(arr)

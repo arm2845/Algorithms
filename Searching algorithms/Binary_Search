@@ -1,0 +1,29 @@
+def binary_search(arr, target):
+	
+	low_i = 0
+	high_i = len(arr) - 1
+
+	while low_i <= high_i:
+
+		mid_i = (low_i + high_i) // 2
+		mid = arr[mid_i]
+
+		if target > mid:
+			low_i = mid_i + 1
+
+		elif target < mid:
+			high_i = mid_i - 1
+
+		else:
+			return True
+
+	return False
+
+arr = [5, 23, 64, 75, 115, 245]
+
+target_1 = 75
+target_2 = 100
+
+print(binary_search(arr, target_1))
+print("\n")
+print(binary_search(arr, target_2))
